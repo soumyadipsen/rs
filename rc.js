@@ -114,14 +114,22 @@ var s1_rows=[
     ]
     
     
-function display()
+function display(var item)
 {
+        var q;
+        if(item=="Chicken Butter Masala")
+              q=s1_rows;
+        if(item=="Paneer Butter Masala")
+              q=s2_rows;
+        if(item=="Chicken Tikka Masala")
+              q=s3_rows;
+        
         var html = "<table border='1|1'>";
-for (var i = 0; i < s1_rows.length; i++) {
+for (var i = 0; i < q.length; i++) {
     html+="<tr>";
-    html+="<td>"+s1_rows[i].Ingredient+"</td>";
-    html+="<td>"+s1_rows[i].Pos+"</td>";
-    html+="<td>"+s1_rows[i].Price+"</td>";
+    html+="<td>"+q[i].Ingredient+"</td>";
+    html+="<td>"+q[i].Pos+"</td>";
+    html+="<td>"+q[i].Price+"</td>";
 
     html+="</tr>";
         }
