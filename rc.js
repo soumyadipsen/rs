@@ -114,7 +114,7 @@ var s1_rows=[
     ]
     
     
-def display()
+function display()
 {
         var html = "<table border='1|1'>";
 for (var i = 0; i < s1_rows.length; i++) {
