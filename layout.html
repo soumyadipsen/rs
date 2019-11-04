@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Items Selection</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <center>
+    <h1 class="display-4">What do you want to cook?</h1><br><br>
+    <form action="layout.html" method="post">
+      <div class="btn-group">
+        <div class="btn-group dropleft" role="group">
+          <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="sr-only">Toggle Dropleft</span>
+          </button>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">Chicken Butter Masala</a>
+            <a class="dropdown-item" href="#">Paneer Butter Masala</a>
+            <a class="dropdown-item" href="#">Chicken Tikka</a>
+            <a class="dropdown-item" href="#">Chicken Biryani</a>
+            <a class="dropdown-item" href="#">Veg Manchurian</a>
+          </div>
+        </div>
+        <button type="button" class="btn btn-secondary">
+          Select Recipe
+        </button>
+      </div>
+      <button class="btn btn-primary" type="submit">Submit</button>
+    </form>
+
+    <script>
+      $('.dropdown-menu').on('click', 'a', function() {
+        var text = $(this).html();
+        var htmlText = text + ' <span class="caret"></span>';
+        $(this).closest('.dropdown').find('.dropdown-toggle').html(htmlText);
+      });
+    </script>
+</body>
+
+</html>
