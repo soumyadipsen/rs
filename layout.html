@@ -8,14 +8,14 @@
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  <script src="./rc.js"></script>
+
   </head>
 
 <body>
   <center>
     <h1 class="display-4">What do you want to cook?</h1><br><br>
-    <form action="layout.html" method="post">
-      <div class="btn-group">
+
+      <!-- <div class="btn-group">
         <div class="btn-group dropleft" role="group">
           <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <span class="sr-only">Toggle Dropleft</span>
@@ -24,18 +24,163 @@
             <a class="dropdown-item" href="#">Chicken Butter Masala</a>
             <a class="dropdown-item" href="#">Paneer Butter Masala</a>
             <a class="dropdown-item" href="#">Chicken Tikka</a>
-            <a class="dropdown-item" href="#">Chicken Biryani</a>
-            <a class="dropdown-item" href="#">Veg Manchurian</a>
           </div>
         </div>
         <button type="button" class="btn btn-secondary">
           Select Recipe
         </button>
       </div>
-      <button class="btn btn-primary" type="submit">Submit</button>
-    </form>
+      <button class="btn btn-primary" type="submit">Submit</button> -->
+      <select id="rs" onchange="getSelectValue();">
+        <option name ="a" value="cbm">Chicken Butter Masala</option>
+        <option name ="a" value="pbm">Paneer Butter Masala</option>
+        <option name ="a" value="ct">Chicken Tikka</option>
+      </select>
 
-    
+      <script>
+      var s1_rows = [{
+          Ingredient: "Chicken"
+          Pos: "RA: S1"
+          Price: 150
+        },
+        {
+          Ingredient: "Salt"
+          Pos: "RA: S2"
+          Price: 120
+        },
+        {
+          Ingredient: "Red Chili Powder"
+          Pos: "RA: S3"
+          Price: 50
+        },
+        {
+          Ingredient: "Garam Masala"
+          Pos: "RA: S4"
+          Price: 50
+        },
+        {
+          Ingredient: "Yogurt"
+          Pos: "RA: S5"
+          Price: 100
+        },
+        {
+          Ingredient: "Butter"
+          Pos: "RB: S1"
+          Price: 50
+        },
+        {
+          Ingredient: "Cashew Nuts"
+          Pos: "RB: S2"
+          Price: 200
+        }
+      ]
+
+
+      var s2_rows = [{
+          Ingredient: "Paneer"
+          Pos: "RB: S3"
+          Price: 150
+        },
+        {
+          Ingredient: "Salt"
+          Pos: "RA: S2"
+          Price: 120
+        },
+        {
+          Ingredient: "Red Chili Powder"
+          Pos: "RA: S3"
+          Price: 50
+        },
+        {
+          Ingredient: "Garam Masala"
+          Pos: "RA: S4"
+          Price: 50
+        },
+        {
+          Ingredient: "Yogurt"
+          Pos: "RA: S5"
+          Price: 100
+        },
+        {
+          Ingredient: "Butter"
+          Pos: "RB: S1"
+          Price: 50
+        },
+        {
+          Ingredient: "Cashew Nuts"
+          Pos: "RB: S2"
+          Price: 200
+        }
+      ]
+
+      var s3_rows = [{
+          Ingredient: "Chicken"
+          Pos: "RA: S1"
+          Price: 150
+        },
+        {
+          Ingredient: "Salt"
+          Pos: "RA: S2"
+          Price: 120
+        },
+        {
+          Ingredient: "Lemon Juice"
+          Pos: "RB: S3"
+          Price: 50
+        },
+        {
+          Ingredient: "Garam Masala"
+          Pos: "RA: S4"
+          Price: 50
+        },
+        {
+          Ingredient: "Yogurt"
+          Pos: "RA: S5"
+          Price: 100
+        },
+        {
+          Ingredient: "Butter"
+          Pos: "RB: S1"
+          Price: 50
+        },
+        {
+          Ingredient: "Heavy Cream"
+          Pos: "RB: S4"
+          Price: 60
+        }
+      ]
+      var selected;
+      function getSelectValue()
+      {
+        selected =document.getElementById("rs").value;
+        display();
+      }
+    getSelectValue();
+      function display() {
+        var q;
+        if (selected.value == "cbm")
+          q = s1_rows;
+        if (selected.value == "pbm")
+          q = s2_rows;
+        if (selected.value == "cts")
+          q = s3_rows;
+
+        var html = "<table border='1|1'>";
+        for (var i = 0; i < q.length; i++) {
+          html += "<tr>";
+          html += "<td>" + q[i].Ingredient + "</td>";
+          html += "<td>" + q[i].Pos + "</td>";
+          html += "<td>" + q[i].Price + "</td>";
+
+          html += "</tr>";
+        }
+        html += "</table>";
+        document.getElementById("box").innerHTML = html;
+      }
+
+      </script>
+
+
 </body>
 
 </html>
