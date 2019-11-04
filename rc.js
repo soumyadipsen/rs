@@ -113,7 +113,10 @@ var s1_rows=[
         } 
     ]
     
-var html = "<table border='1|1'>";
+    
+def display()
+{
+        var html = "<table border='1|1'>";
 for (var i = 0; i < s1_rows.length; i++) {
     html+="<tr>";
     html+="<td>"+s1_rows[i].Ingredient+"</td>";
@@ -121,8 +124,9 @@ for (var i = 0; i < s1_rows.length; i++) {
     html+="<td>"+s1_rows[i].Price+"</td>";
 
     html+="</tr>";
-
-}
+        }
 html+="</table>";
 document.getElementById("box").innerHTML = html;
+
+
 
