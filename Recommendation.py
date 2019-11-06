@@ -130,16 +130,3 @@ app.setApplicationName("Recommendation System")
 window = MainWindow()
 
 app.exec_()
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
